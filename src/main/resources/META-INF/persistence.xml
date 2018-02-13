@@ -2,16 +2,15 @@
              xmlns="http://java.sun.com/xml/ns/persistence"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
-    <persistence-unit name="Arende"
-                      transaction-type="RESOURCE_LOCAL">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <persistence-unit name="DMP" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>org.teel.ad.Beh</class>
         <class>org.teel.ad.Company</class>
         <class>org.teel.ad.User</class>
         <properties>
 
             <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:~/dev/hsqldb/testdb"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
