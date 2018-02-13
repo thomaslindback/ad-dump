@@ -26,4 +26,28 @@
         </properties>
     </persistence-unit>
 
+    <persistence-unit name="DMPA" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>org.teel.ad.Beh</class>
+        <class>org.teel.ad.Company</class>
+        <class>org.teel.ad.User</class>
+        <properties>
+
+            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:~/dev/hsqldb/testdb"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.c3p0.min_size" value="5"/>
+            <property name="hibernate.c3p0.max_size" value="20"/>
+            <property name="hibernate.c3p0.timeout" value="300"/>
+            <property name="hibernate.c3p0.max_statements" value="50"/>
+            <property name="hibernate.c3p0.idle_test_period" value="3000"/>
+            <property name="hibernate.archive.autodetection" value="false"/>
+        </properties>
+    </persistence-unit>
+
 </persistence>
